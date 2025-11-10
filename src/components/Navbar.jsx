@@ -1,29 +1,37 @@
-import { Rocket } from 'lucide-react';
+import React from 'react';
+import { Shield, LogIn, UserPlus } from 'lucide-react';
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <header className="w-full sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/70 border-b border-black/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white">
-            <Rocket size={18} />
+    <header className="sticky top-0 z-30 w-full border-b border-slate-200/70 backdrop-blur bg-white/70">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sky-600 text-white">
+              <Shield className="h-5 w-5" />
+            </div>
+            <div className="font-semibold text-slate-800">InsureOps</div>
           </div>
-          <span className="font-semibold text-gray-900 tracking-tight">Flames.Blue</span>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-slate-600">
+            <a href="#overview" className="hover:text-slate-900">Overview</a>
+            <a href="#charts" className="hover:text-slate-900">Grafik</a>
+            <a href="#products" className="hover:text-slate-900">Produk</a>
+            <a href="#simulator" className="hover:text-slate-900">Simulasi Premi</a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <a href="#login" className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+              <LogIn className="h-4 w-4" />
+              Login
+            </a>
+            <a href="#signup" className="inline-flex items-center gap-2 rounded-md bg-sky-600 px-3 py-2 text-sm font-medium text-white hover:bg-sky-700">
+              <UserPlus className="h-4 w-4" />
+              Sign Up
+            </a>
+          </div>
         </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-          <a href="#features" className="hover:text-gray-900 transition-colors">Features</a>
-          <a href="#about" className="hover:text-gray-900 transition-colors">About</a>
-          <a href="#contact" className="hover:text-gray-900 transition-colors">Contact</a>
-        </nav>
-        <a
-          href="#get-started"
-          className="inline-flex items-center rounded-md bg-gray-900 text-white px-3 py-2 text-sm font-medium shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900/20"
-        >
-          Get Started
-        </a>
       </div>
     </header>
   );
-}
+};
 
 export default Navbar;
